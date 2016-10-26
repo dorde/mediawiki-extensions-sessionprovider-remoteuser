@@ -162,8 +162,8 @@ class AuthRemoteuser extends MediaWiki\Session\ImmutableSessionProviderWithCooki
     {
         global $wgAuthRemoteuserDomain;
 
-        if (isset($_SERVER['REMOTE_USER'])) {
-            $username = $_SERVER['REMOTE_USER'];
+        if (isset($_SERVER['HTTP_X_REMOTE_USER'])) {
+            $username = $_SERVER['HTTP_X_REMOTE_USER'];
 
             if ($wgAuthRemoteuserDomain) {
                 $username = str_replace("$wgAuthRemoteuserDomain\\",
